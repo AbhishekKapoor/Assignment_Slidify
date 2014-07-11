@@ -26,31 +26,68 @@ knit        : slidify::knit2slides
 
 > 1. Packages - FactoMineR
 
-```{r}
+
+```r
 library(FactoMineR)
 author=read.csv("Sample.csv",row.names="X")
-ca2<- CA(author,graph = FALSE)
-ca2$eig
+```
 
+```
+## Warning: cannot open file 'Sample.csv': No such file or directory
+```
+
+```
+## Error: cannot open the connection
+```
+
+```r
+ca2<- CA(author,graph = FALSE)
+```
+
+```
+## Error: cannot coerce class ""function"" to a data.frame
+```
+
+```r
+ca2$eig
+```
+
+```
+## Error: object 'ca2' not found
 ```
 
 ---
 
 ## Correspondence Map Coordinates
 
-```{r}
-head(ca2$col$coord)
-head(ca2$row$coord)
 
+```r
+head(ca2$col$coord)
+```
+
+```
+## Error: object 'ca2' not found
+```
+
+```r
+head(ca2$row$coord)
+```
+
+```
+## Error: object 'ca2' not found
 ```
 
 ---
 
 ## Correspondence Map Plot
 
-```{r}
-plot(ca2)
 
+```r
+plot(ca2)
+```
+
+```
+## Error: object 'ca2' not found
 ```
 
 ---
