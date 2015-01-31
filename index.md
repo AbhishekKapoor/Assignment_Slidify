@@ -1,8 +1,8 @@
 ---
-title       : My First Slidify Presentation
-subtitle    : Pitching for my first shiny app
+title       : Kaggle Mobile Ad Competition
+subtitle    : 1st Cut of Analysis
 author      : Abhishek Kapoor
-job         : 1st Deck
+job         : Mobile Ad Competition
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
