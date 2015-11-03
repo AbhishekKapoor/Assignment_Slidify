@@ -13,12 +13,15 @@ knit        : slidify::knit2slides
 
 ---
 
-## Correspondence Map
+## Back-ground
 
-> 1. Market Researcher have to deal with brand perception data frequently
-> 2. Here consumers has rated different brands against different imagery aspects 
-> 3. One of the way of analysing this data is through correspondence maps
-> 4. Example of correspondence maps -http://kantarmedia-tgiie.com/wp-content/uploads/2012/03/Correspondence-Mapping-ROI.pdf
+> 1.Hi friends, we take this competition as an opportunity to learn R and to build an architecture around R and big data
+
+> 2.We are using Slidify and R Markdown for reporting
+
+> 3.This competition is hosted on Kaggle - (http://www.kaggle.com/c/avazu-ctr-prediction)
+
+> 4.Libraries we will be using are - ff,ffbase,ffbase2,ggplot2,tidyr,lubridate 
 
 ---
 

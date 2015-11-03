@@ -13,24 +13,47 @@ knit        : slidify::knit2slides
 
 ---
 
-## Correspondence Map
+## Back-ground
 
-> 1. Market Researcher have to deal with brand perception data frequently
-> 2. Here consumers has rated different brands against different imagery aspects 
-> 3. One of the way of analysing this data is through correspondence maps
-> 4. Example of correspondence maps -http://kantarmedia-tgiie.com/wp-content/uploads/2012/03/Correspondence-Mapping-ROI.pdf
+> 1.Hi friends, we take this competition as an opportunity to learn R and to build an architecture around R and big data
+
+> 2.We are using Slidify and R Markdown for reporting
+
+> 3.This competition is hosted on Kaggle - (http://www.kaggle.com/c/avazu-ctr-prediction)
+
+> 4.Libraries we will be using are - ff,ffbase,ffbase2,ggplot2,tidyr,lubridate 
 
 ---
 
-## Correspondence Map using R - Eigen values
+## Step 1 -Loading the data
 
-> 1. Packages - FactoMineR
 
 ```{r}
-library(FactoMineR)
-author=read.csv("Sample.csv",row.names="X")
-ca2<- CA(author,graph = FALSE)
-ca2$eig
+##as we are working with multi core system, we will use parallel;process to reduce the time
+##requirement is RRO
+rm(list=ls())###remove all the elemnts already stored in the memory
+
+if(require(Revobase)){
+  setMKLthreads(4)
+}
+library(ff)
+library(ffbase)
+library(ffbase2)
+library (lubridate)
+library(tidyr)
+library("ggplot2")
+###df <- read.csv.ffdf(file=gzfile('./train.gz'), VERBOSE=TRUE)
+###ad <- tbl_ffdf(df, src="./db_ff", name="click_ads_data",force=T)
+src <- src_ffdf("C:/Users/Abhishek Kapoor/Documents/GitHub/kaggle/Ad Click predictation/data/db_ff")
+print (src)
+ad <- tbl(src, from="click_ads") # or equivalently tbl_ffdf(src=src, name="click_ads")
+tab1<- table (ad$click)
+tab2<- table (ad$click,ad$banner_pos)
+tab1.1<- prop.table(tab1)*100
+tab1.2<-round(tab1.1, digits = 1)
+
+tab2.1<- prop.table(tab2,2)*100
+tab2.2<-round(tab2.1, digits = 1)
 
 ```
 
